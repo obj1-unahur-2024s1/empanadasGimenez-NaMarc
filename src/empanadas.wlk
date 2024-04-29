@@ -26,7 +26,7 @@ object galvan {
 	}
 }
 object baigorria {
-	var sueldo 
+	var sueldo = 0
 	var valorEmpanadas = 150
 	var cobro = 0
 	
@@ -55,6 +55,9 @@ object gimenez{
 	method pagarA(empleado){
 		fondoSueldos -= empleado.sueldo()
 		empleado.cobrarSueldo()
+	}
+	method fondoSueldos(){
+		return fondoSueldos
 	}
 	
 }

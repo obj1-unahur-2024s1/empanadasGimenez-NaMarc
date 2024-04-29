@@ -1,0 +1,20 @@
+import empanadas.*
+
+test "Gimenez le paga el sueldo a Galvan y a Baigorria que vendió 500 empanadas" {
+	baigorria.sueldo(500)
+	gimenez.pagarA(baigorria)
+	gimenez.pagarA(galvan)
+	
+	assert.equals(75000, baigorria.sueldo())
+	assert.equals(75000, baigorria.totalCobrado())
+	assert.equals(150000, galvan.totalDinero())
+	assert.equals(2775000, gimenez.fondoSueldos())
+}
+
+test "Galvan gasta plata y luego cobra un sueldo" {
+	galvan.gastar(200000)
+	galvan.cobrarSueldo()
+	assert.equals(0, galvan.totalDinero())
+	assert.equals(50000, galvan.totalDeuda())
+}
+	
